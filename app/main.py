@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.routers import  user, recruiter, job, auth
 from app.db.database import engine
 from app.models import user as user_model, job as job_model
+from app.core.elasticsearch import init_elasticsearch, close_elasticsearch
 from app.core.config import settings
 import uvicorn
 
