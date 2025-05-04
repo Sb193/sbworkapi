@@ -2,7 +2,8 @@ from elasticsearch import AsyncElasticsearch
 from app.core.config import settings
 
 es = AsyncElasticsearch(
-    hosts=[f"http://{settings.ELASTICSEARCH_HOST}:{settings.ELASTICSEARCH_PORT}"],
+    hosts=[f"{settings.ELASTICSEARCH_HOST}:{settings.ELASTICSEARCH_PORT}"],
+    basic_auth=(settings.ELASTICSEARCH_USERNAME, settings.ELASTICSEARCH_PASSWORD),
     verify_certs=False,
     timeout=30,
     max_retries=3,
