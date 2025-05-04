@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     
     # Elasticsearch settings
     ELASTICSEARCH_HOST: str = os.getenv("ELASTICSEARCH_HOST", "https://elasticsearch-production-08e6.up.railway.app")
-    ELASTICSEARCH_PORT: int = int(os.getenv("ELASTICSEARCH_PORT", "5601"))
+    ELASTICSEARCH_PORT: int = int(os.getenv("ELASTICSEARCH_PORT", "9200"))
     ELASTICSEARCH_USERNAME: str = os.getenv("ELASTICSEARCH_USERNAME", "kibana")
     ELASTICSEARCH_PASSWORD: str = os.getenv("ELASTICSEARCH_PASSWORD", "MyPass123")
     ELASTICSEARCH_URL: str = f"{ELASTICSEARCH_HOST}:{ELASTICSEARCH_PORT}"
