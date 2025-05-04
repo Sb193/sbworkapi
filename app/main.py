@@ -4,7 +4,6 @@ from app.routers import  user, recruiter, job, auth
 from app.db.database import engine
 from app.models import user as user_model, job as job_model
 from app.core.config import settings
-from app.core.elasticsearch import init_elasticsearch, close_elasticsearch
 import uvicorn
 
 user_model.Base.metadata.create_all(bind=engine)
