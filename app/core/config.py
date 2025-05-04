@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     # Redis settings
     REDIS_HOST: str = os.getenv("REDIS_HOST", "redis-server")
     REDIS_PORT: str = os.getenv("REDIS_PORT", "6379")
+    REDIS_PASSWORD: str = os.getenv("REDIS_PASSWORD", "Sbac@19032003")
     REDIS_DB: int = 0
     
     # MinIO settings
@@ -31,9 +32,11 @@ class Settings(BaseSettings):
     MINIO_SECRET_KEY: str = os.getenv("MINIO_SECRET_KEY", "wk1rd9ohZq9aghNmowPHTpN6VFjCSA6XrubS8W7H")
     
     # Elasticsearch settings
-    ELASTICSEARCH_HOST: str = os.getenv("ELASTICSEARCH_HOST", "elasticsearch")
-    ELASTICSEARCH_PORT: int = int(os.getenv("ELASTICSEARCH_PORT", "9200"))
-    ELASTICSEARCH_URL: str = f"http://{ELASTICSEARCH_HOST}:{ELASTICSEARCH_PORT}"
+    ELASTICSEARCH_HOST: str = os.getenv("ELASTICSEARCH_HOST", "https://elasticsearch-production-08e6.up.railway.app")
+    ELASTICSEARCH_PORT: int = int(os.getenv("ELASTICSEARCH_PORT", "5601"))
+    ELASTICSEARCH_USERNAME: str = os.getenv("ELASTICSEARCH_USERNAME", "kibana")
+    ELASTICSEARCH_PASSWORD: str = os.getenv("ELASTICSEARCH_PASSWORD", "MyPass123")
+    ELASTICSEARCH_URL: str = f"{ELASTICSEARCH_HOST}:{ELASTICSEARCH_PORT}"
     
     # JWT settings
     SECRET_KEY: str = os.getenv("SECRET_KEY", "your-secret-key-here")
