@@ -5,7 +5,7 @@ import json
 
 class ElasticsearchManager:
     def __init__(self):
-        self.es = AsyncElasticsearch(settings.ELASTICSEARCH_URL)
+        self.es = AsyncElasticsearch(settings.ELASTICSEARCH_URL, basic_auth=(settings.ELASTICSEARCH_USERNAME, settings.ELASTICSEARCH_PASSWORD))
         self.indices = {
             "jobs": {
                 "mappings": {
