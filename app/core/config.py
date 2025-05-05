@@ -22,7 +22,8 @@ class Settings(BaseSettings):
     # Redis settings
     REDIS_HOST: str = os.getenv("REDIS_HOST", "redis-server")
     REDIS_PORT: str = os.getenv("REDIS_PORT", "6379")
-    REDIS_PASSWORD: str = os.getenv("REDIS_PASSWORD", "Sbac@19032003")
+    REDIS_USER: str = os.getenv("REDIS_USER", "default")
+    REDIS_PASSWORD: str = os.getenv("REDIS_PASSWORD", "eSxareMqlOpzXclaGqTomvxMlfuZkblQ")
     REDIS_DB: int = 0
     
     # MinIO settings
